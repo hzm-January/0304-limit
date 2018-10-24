@@ -1,0 +1,9 @@
+logging:
+  level:
+   houzm.accumulation.ratelimiter: debug
+server:
+  port: 1990
+spring:
+  mvc:
+    favicon:
+      enabled: false
