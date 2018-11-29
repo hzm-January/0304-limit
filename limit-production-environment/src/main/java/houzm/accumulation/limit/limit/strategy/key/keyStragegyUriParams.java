@@ -6,7 +6,6 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.IOUtils;
 import org.springframework.http.HttpMethod;
-import com.nair.pss.util.MD5;
 
 /**
  * Package: com.nair.pss.res.business.common.limit.strategy.key
@@ -27,8 +26,9 @@ public class keyStragegyUriParams extends AbstractKeyStragegy {
     public String key() {
         String params = this.getRequestParams(request);
         String uri = request.getRequestURI().replace("/", "_");
-        String md5 = MD5.md5s(params);
-        return uri.concat("_").concat(md5);
+//        String md5 = MD5.md5s(params);
+//        return uri.concat("_").concat(md5);
+        return uri.concat("_");
     }
 
     private String getRequestParams(HttpServletRequest request) {

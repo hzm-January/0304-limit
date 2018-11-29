@@ -27,7 +27,11 @@ public class LimitInterceptor extends HandlerInterceptorAdapter {
             if (apiLimit != null) {
                 //1. 根据key的策略生成key
                 //2. 根据limit的限流策略进行限流
-                return LimitExecute.execute(apiLimit, KeyBuilder.key(request, apiLimit.key()));
+                Boolean execute = LimitExecute.execute(apiLimit, KeyBuilder.key(request, apiLimit.key()));
+//                return execute;
+                if (!execute) {
+                    throw new IllegalStateException("系统繁忙，请稍后重试");
+                }
             }
         }
         return flag;

@@ -28,7 +28,7 @@ public class LimitStrategyWindowsGuava extends AbstractLimitStrategy {
         }
     });
 
-    public LimitStrategyWindowsGuava(@NotNull Limit limit) {
+    public LimitStrategyWindowsGuava(Limit limit) {
         super(limit);
     }
 

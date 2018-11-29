@@ -28,6 +28,5 @@ public enum LimitStrategyType {
      * 平滑限流-使用堆内缓存Guava
      */
     SMOOTH_GUAVA;
-    ;
 
 }

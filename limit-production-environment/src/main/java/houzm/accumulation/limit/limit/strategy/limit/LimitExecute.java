@@ -21,6 +21,8 @@ public class LimitExecute {
         switch (limit.strategy()) {
             case WINDOWS_GUAVA:
                 return new LimitStrategyWindowsGuava(limit).execute(key);
+            case WINDOWS_REDIS:
+                return new LimitStrategyWindowsRedis(limit).execute(key);
             default:
                 return new LimitStrategyWindowsGuava(limit).execute(key);
         }
